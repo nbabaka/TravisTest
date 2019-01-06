@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode12.1
+osx_image: xcode10
 xcode_workspace: TravisCITest.xcworkspace
 xcode_scheme: TravisCITest
 xcode_destination: platform=iOS Simulator,OS=11.4,name=iPhone X
