@@ -1,0 +1,7 @@
+language: objective-c
+osx_image: xcode12.1
+xcode_workspace: TravisCITest.xcworkspace
+xcode_scheme: TravisCITest
+xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X
+before_install:
+- pod install

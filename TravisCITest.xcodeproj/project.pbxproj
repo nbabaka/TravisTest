@@ -12,6 +12,7 @@
 		23044F3221E26C1300C9D481 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23044F3021E26C1300C9D481 /* Main.storyboard */; };
 		23044F3421E26C1400C9D481 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23044F3321E26C1400C9D481 /* Assets.xcassets */; };
 		23044F3721E26C1400C9D481 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23044F3521E26C1400C9D481 /* LaunchScreen.storyboard */; };
+		34307A1F1DE36BC4FDA7AC7B /* Pods_TravisCITest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05938EA99B44020B49B7960 /* Pods_TravisCITest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		23044F3321E26C1400C9D481 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23044F3621E26C1400C9D481 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23044F3821E26C1400C9D481 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		614BA442C265F1D3C180EE99 /* Pods-TravisCITest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravisCITest.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravisCITest/Pods-TravisCITest.release.xcconfig"; sourceTree = "<group>"; };
+		E834E0F9BC516078FE179457 /* Pods-TravisCITest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravisCITest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravisCITest/Pods-TravisCITest.debug.xcconfig"; sourceTree = "<group>"; };
+		F05938EA99B44020B49B7960 /* Pods_TravisCITest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravisCITest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34307A1F1DE36BC4FDA7AC7B /* Pods_TravisCITest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				23044F2B21E26C1300C9D481 /* TravisCITest */,
 				23044F2A21E26C1300C9D481 /* Products */,
+				24D7DB4BC42C92398CC7B097 /* Pods */,
+				90A2A430CA188E3985D2E93B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = TravisCITest;
 			sourceTree = "<group>";
 		};
+		24D7DB4BC42C92398CC7B097 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E834E0F9BC516078FE179457 /* Pods-TravisCITest.debug.xcconfig */,
+				614BA442C265F1D3C180EE99 /* Pods-TravisCITest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		90A2A430CA188E3985D2E93B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F05938EA99B44020B49B7960 /* Pods_TravisCITest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 23044F3B21E26C1400C9D481 /* Build configuration list for PBXNativeTarget "TravisCITest" */;
 			buildPhases = (
+				71D2CD1E2F00DB6F4588A69C /* [CP] Check Pods Manifest.lock */,
 				23044F2521E26C1300C9D481 /* Sources */,
 				23044F2621E26C1300C9D481 /* Frameworks */,
 				23044F2721E26C1300C9D481 /* Resources */,
@@ -129,6 +154,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		71D2CD1E2F00DB6F4588A69C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravisCITest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		23044F2521E26C1300C9D481 /* Sources */ = {
@@ -280,6 +330,7 @@
 		};
 		23044F3C21E26C1400C9D481 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E834E0F9BC516078FE179457 /* Pods-TravisCITest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +349,7 @@
 		};
 		23044F3D21E26C1400C9D481 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 614BA442C265F1D3C180EE99 /* Pods-TravisCITest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
